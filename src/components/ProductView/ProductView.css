@@ -32,6 +32,7 @@
   justify-content: center;
   width: 20px;
   height: 45px;
+  cursor:cell;
 }
 
 /* NOTE: Special handing to put the toggle OUTSIDE the details panel so it does
