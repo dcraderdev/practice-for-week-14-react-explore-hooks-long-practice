@@ -1,16 +1,36 @@
 import React from 'react'
 
 function ProductDetails({ product, visible }) {
+
+  console.log('---');
+  console.log('current sideOpen status',visible);
+  console.log('current selectedProduct status',product);
+
+if (!product)console.log('!product');
+// if (!product)product=null
+
   if (!visible) return null
 
-  if (!product) return (
+
+  console.log('Before the "no product" condition');
+  console.log('current selectedProduct status',product);
+
+  if (!product) {
+    console.log('Reached the "no product" condition');
+    return (
     <div className="product-details">
       <p className="product-info">Our Products</p>
       <p>Welcome to our product catalog. Please enjoy exploring.</p>
       <p>Please select a product to view its details.</p>
     </div>
-  )
+  )}
 
+
+  console.log('After the "no product" condition');
+  console.log('current selectedProduct status',product);
+
+if(product.details){
+  console.log('Reached the "product" condition');
   return (
     <div className="product-details">
       <p className="product-info">{product.name}</p>
@@ -25,6 +45,7 @@ function ProductDetails({ product, visible }) {
       </ul>
     </div>
   )
+}
 }
 
 export default ProductDetails;
